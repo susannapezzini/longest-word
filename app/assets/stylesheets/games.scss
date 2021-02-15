@@ -1,3 +1,103 @@
 // Place all the styles related to the games controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: https://sass-lang.com/
+
+$primary: #ffc0cb;
+$font-family: 'Courier Prime', monospace;
+$secondary: #803945;
+$font-family: 'Courier Prime', monospace;
+
+
+
+.container {
+  margin: 0 auto;
+  width: 40vw;
+  display: flex;
+  flex-direction: column;
+  // justify-content: center;
+  background-color: #f2f2f2;
+  padding: 2rem;
+  max-width: 960px;
+  height: 100vh;
+  & form {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    width: 100%;
+    & input {
+      line-height: 1.5rem;
+      margin: 0.5rem 0;
+    }
+  }
+}
+
+
+*,
+*:before,
+*:after {
+  box-sizing: border-box;
+}
+
+html {
+  font-size: 16px;
+  font-family: $font-family;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  background: $primary;
+  opacity: 0.8; 
+}
+
+h1 {
+  font-size: 2rem;
+}
+
+.btn {
+  appearance: none;
+  border-style: none;
+  color: white;
+  background-color: $secondary;
+  border-radius: 3px;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 3px;
+  cursor: pointer;
+  opacity: 0.8;
+  padding: 0.5rem;
+  &-ask {
+    width: 50%;
+    text-align: center;
+  }
+  &:hover {
+    opacity: 1;
+    text-decoration: underline;
+  }
+  & a:link,
+  & a:visited,
+  & a:active {
+    padding: 0.5rem;
+    text-decoration: none;
+    color: white;
+  }
+}
+
+.letter_box {
+  border: 1px solid lightgray;
+  padding: 0.75rem; 
+  margin: 0.5rem;
+  background-color: #ffffff;
+  border-radius: 3px;
+  -webkit-box-shadow: 8px 7px 12px -8px rgba(122,122,122,0.75); 
+  box-shadow: 8px 7px 12px -8px rgba(122,122,122,0.75);
+  font-size: 1.5rem;
+  text-transform: uppercase;
+  color: $secondary;
+}
+
+.letter {
+  display: flex;
+  flex-wrap: wrap;
+  margin-bottom: 2rem;
+}

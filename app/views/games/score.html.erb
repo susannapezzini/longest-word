@@ -1,3 +1,7 @@
-<h1> score page </h1>
-<p><%= params[:word]%></p>
-<p><%= @answer %></p>
+<div class="container">
+  <h1>Your Score</h1>
+  <p><%= params[:word]%></p>
+  <p><%= @answer %></p>
+  <div class="btn btn-ask"><%= link_to "New game", newGame_path %></div>
+
+</div>
