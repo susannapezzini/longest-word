@@ -5,18 +5,20 @@ class GamesController < ApplicationController
  
   def new
     @alphabet = %w[a b c d e f g h i j k l m n o p q r s t u v w x y z]
-    @random_letters = 10.times.map { @alphabet.sample }
+    @vowels = %w[a e i o u y]
+    @random_letters = 5.times.map { @vowels.sample }
+    @random_letters += 5.times.map { (@alphabet - @vowels).sample }
   end
 
   def score
-    @word = params[:word]
+    @word = params[:word].downcase
     grid = params[:random_letters]
     # word matching grid
     input = @word.chars.all? do |letter|
       grid.count(letter) >= @word.count(letter)
     end
     if !input
-      @answer = "This letter is not included."
+      @answer = "Some letters are not included in the given grid."
     elsif !realword?(@word)
       @answer = "This is not an english word."
     end
